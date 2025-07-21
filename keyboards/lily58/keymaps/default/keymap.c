@@ -132,7 +132,9 @@ bool oled_task_user(void) {
     //oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
   } else {
-    oled_write(read_logo(), false);
+    //oled_write(read_logo(), false); // original logo
+    oled_write_raw_P(read_logo(), 512); // custom logo
+
   }
     return false;
 }
